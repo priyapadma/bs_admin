@@ -1,0 +1,153 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.bg-strong-bliss {
+    background-image: linear-gradient(to right, #84c225 0%, #81c120 19%, #7abd14 60%, #7abd14 100%) !important;
+}
+
+.bg-royal {
+    background-image: linear-gradient(to right, #403f3f, #2b2a29) !important;
+}
+
+.form-style-5{
+	max-width: 95%;
+	padding: 10px 20px;
+/*	background: #f4f7f8;*/
+	margin: 10px auto;
+	padding: 20px;
+	border-radius: 8px;
+}
+.form-style-5 fieldset{
+    border: none;
+    margin-bottom: 50px;
+}
+.form-style-5 legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+
+.form-style-5 .number {
+	background: #84c225;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-5 input, .form-style-5 select {
+    border-style: solid;
+    border-color: #645f5f;
+    border-width: 0 0 2px 0;
+    width: 100%;
+    font-weight: normal;
+    padding: 3% 0;
+    margin-top: 4%;
+    font-size: 14px;
+    border-radius: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-style-5 input:focus, .form-style-5 select:focus {
+    border-color: #84c225;
+    border-width: 0 0 2px 0;
+    background-color: #fff;
+    color: #1a1a1a;
+    outline: none !important;
+}
+
+.table-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+}
+.table-title .add-new {
+    float: right;
+    height: 30px;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: none;
+    min-width: 100px;
+    border-radius: 50px;
+    line-height: 13px;
+}
+.table-title .add-new i {
+    margin-right: 4px;
+}
+table.table {
+    table-layout: fixed;
+}
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+    text-align: center;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table th:last-child {
+    width: 100px;
+}
+table.table td a {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 24px;
+}    
+table.table td a.add {
+    color: #27C46B;
+}
+table.table td a.edit {
+    color: #FFC107;
+}
+table.table td a.delete {
+    color: #E34724;
+}
+table.table td i {
+    font-size: 19px;
+}
+table.table td a.add i {
+    font-size: 24px;
+    margin-right: -1px;
+    position: relative;
+    top: 3px;
+}    
+table.table .form-control {
+    height: 32px;
+    line-height: 32px;
+    box-shadow: none;
+    border-radius: 2px;
+}
+table.table .form-control.error {
+    border-color: #f50000;
+}
+table.table td .add {
+    display: none;
+}
+button.btn.btn-primary {
+    background-color: #84c225 !important;
+    border-color: #84c225 !important;
+}
+.form-style-5 button.btn.btn-primary, .form-style-5 button.btn.btn-secondary {
+    font-size: 14px;
+    padding: 5px 30px;
+}
+.datepicker-days .table-condensed {
+    width: 100% !important;
+}
+.datepicker-days .table-condensed td.active.day {
+    background-color: #84c225 !important;
+    background-image: none !important;
+}
