@@ -23,7 +23,7 @@ body {
     margin-bottom: 50px;
 }
 .form-style-5 legend {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	margin-bottom: 10px;
 }
 
@@ -150,4 +150,22 @@ button.btn.btn-primary {
 .datepicker-days .table-condensed td.active.day {
     background-color: #84c225 !important;
     background-image: none !important;
+}
+.awesomplete > ul > li {
+    text-align: left;
+    padding: .5em .6em;
+}
+.awesomplete > ul {
+    padding: 5px 0;
+}
+.awesomplete > ul > li:hover, .awesomplete mark {
+    background-color: #84c225 !important;
+    color: white;
+}
+.table-responsive {
+    overflow-y: hidden !important;
+}
+.app-sidebar.sidebar-text-light .vertical-nav-menu li a.active {
+    background: #ffffff26;
+    color: #fff;
 }

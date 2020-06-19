@@ -14,28 +14,16 @@ $(document).ready(function(){
 		var index = $("table tbody tr:last-child").index();
         var row = '<tr>' +
             '<td>'+
-                '<select class="form-control" id="fabricGrp_'+i+'">'+
-                    '<option value="" disabled selected>Select</option>'+
-                    '<option value="Knitted">Knitted</option>'+
-                    '<option value="Wooven">Wooven</option>'+
-                '</select>'+
+                '<input autofocus id="fabricGrp_'+i+'" class="form-control awesomplete"/>'+
             '</td>' +
             '<td>'+
-                '<select class="form-control" id="fabricName_'+i+'">'+
-                    '<option value="" disabled selected>Select</option>'+
-                    '<option value="Printed">Printed</option>'+
-                    '<option value="Solid">Solid</option>'+
-                '</select>'+
+                '<input id="fabricName_'+i+'" class="form-control awesomplete"/>'+
             '</td>' +
             '<td><input type="text" class="form-control" id="styleNo_'+i+'"></td>' +
             '<td><input type="text" class="form-control" id="desc_'+i+'"></td>' +
             '<td><input type="text" class="form-control" id="qty_'+i+'"></td>' +
             '<td>'+
-                '<select class="form-control" id="uom_'+i+'">'+
-                    '<option value="" disabled selected>Select</option>'+
-                    '<option value="kg">kg</option>'+
-                    '<option value="pcs">pcs</option>'+
-                '</select>'+
+                '<input id="uom_'+i+'" class="form-control awesomplete"/>'+
             '</td>' +
             '<td><input type="text" class="form-control" id="rate_'+i+'"></td>' +
             '<td>'+
@@ -50,13 +38,24 @@ $(document).ready(function(){
         $("save_"+i).tooltip();
         $("edit_"+i).tooltip();
         $("remove_"+i).tooltip();
+
+        new Awesomplete(document.getElementById("fabricGrp_"+i), {
+            list: ["Knitted", "Wooven"]
+        });
+        new Awesomplete(document.getElementById("fabricName_"+i), {
+            list: ["Printed", "Solid"]
+        });
+        new Awesomplete(document.getElementById("uom_"+i), {
+            list: ["kg", "pcs"]
+        });
         i++;
     });
 	// Add row on add button click
 	$(document).on("click", ".add", function(){
 		var empty = false;
-		var input = $(this).parents("tr").find('input[type="text"]');
+		var input = $(this).parents("tr").find('input');
         input.each(function(){
+            console.log($(this).val())
 			if(!$(this).val()){
 				$(this).addClass("error");
 				empty = true;
@@ -64,8 +63,20 @@ $(document).ready(function(){
                 $(this).removeClass("error");
             }
 		});
-		$(this).parents("tr").find(".error").first().focus();
-        var select = $(this).parents("tr").find('select');
+        $(this).parents("tr").find(".error").first().focus();
+        if(!empty){
+            input.each(function(){
+                if(input.hasClass("awesomplete")) {
+                    $(this).parents("td").html($(this).val());
+                } else {
+                    $(this).parent("td").html($(this).val());
+                }
+            });
+			$(this).parents("tr").find(".add, .edit").toggle();
+			$(".add-new").removeAttr("disabled");
+        }	
+
+       /* var select = $(this).parents("tr").find('select');
         select.each(function(){
 			if(!$(this).val()){
 				$(this).addClass("error");
@@ -85,7 +96,7 @@ $(document).ready(function(){
 			});			
 			$(this).parents("tr").find(".add, .edit").toggle();
 			$(".add-new").removeAttr("disabled");
-        }	
+        }	*/
         
     });
 	// Edit row on edit button click
